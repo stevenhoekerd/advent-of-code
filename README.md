@@ -33,5 +33,19 @@ the algorithm itself is O(n log n ) though, and with optimizations it could easi
 ## Day 2 
 ### Silver
 #### Algorithm:
+A simple iteration over all lines, and checking the safety of each report.
+We deem an entry unsafe if any of the following is true:
+- an entry is equal to the previous
+- the difference with the previous entry is over three
+- the change goes in a different direction
+we sum the amount of safe lines, and output it.
 
 #### Time complexity:
+O(n). Simple iteration, with a very linear opreation over it.
+
+### Gold
+#### Algorithm:
+Same as for silver, expect besides testing every line, we also check each line with any element removed. if any of those are safe, we add 1 to the count of the total.
+
+#### Time complexity
+still O(n). a bit of a bigger calculation per n, but O(n) nonetheless.
