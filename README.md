@@ -29,3 +29,9 @@ we Check whether the current entry in list 2 is larger, equal, or smaller.
 #### Time complexity:
 Probably O(n log n) again, due to the sort. i do do a whole lot of accessing entries in a list though, which might push me up a bit.
 the algorithm itself is O(n log n ) though, and with optimizations it could easily reach that.
+
+## Day 2 
+### Silver
+#### Algorithm:
+
+#### Time complexity:
