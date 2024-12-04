@@ -60,7 +60,25 @@ O(n). Simple iteration
 
 ### Gold
 #### Algorithm:
-Same as for silver, expect besides testing every line, we also check each line with any element removed. if any of those are safe, we add 1 to the count of the total.
+Slightly bigger regex, and a bit more logic in the iteration over the result, but still not complicated
 
 #### Time complexity
 still O(n). a bit of a bigger calculation per n, but O(n) nonetheless.
+
+## Day 4
+### Silver
+#### Algorithm:
+create an X by Y grid out of the input, and pad all edges with an extra . to ensure we dont have to account for edges anywhere else.
+If we find an x, we check all 8 directions for an M, and then AS in the same direction.
+
+
+#### Time complexity:
+O(n). quite an expensive one relatively speaking, but still O(n)
+
+### Gold
+#### Algorithm:
+grid creation is the same, when iterating we now look for an A, and then we check its 4 relative positions for a cross, and check that we can create MAS twice.
+
+
+#### Time complexity
+still O(n). a bit less heavy than the silver solution even.
