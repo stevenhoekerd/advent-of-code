@@ -23,5 +23,3 @@ for match in all_matches:
         enabled = 1
     
 print(total)
-    
-    

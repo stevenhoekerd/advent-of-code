@@ -15,7 +15,4 @@ for line in lines:
 total = 0
 for match in all_matches:
     total += (int(match[0]) * int(match[1]))
-print(total)
-
-    
-    
+print(total)  

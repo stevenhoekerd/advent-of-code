@@ -49,3 +49,18 @@ Same as for silver, expect besides testing every line, we also check each line w
 
 #### Time complexity
 still O(n). a bit of a bigger calculation per n, but O(n) nonetheless.
+
+## Day 3
+### Silver
+#### Algorithm:
+Just a regex match, and an iteration.
+
+#### Time complexity:
+O(n). Simple iteration
+
+### Gold
+#### Algorithm:
+Same as for silver, expect besides testing every line, we also check each line with any element removed. if any of those are safe, we add 1 to the count of the total.
+
+#### Time complexity
+still O(n). a bit of a bigger calculation per n, but O(n) nonetheless.
