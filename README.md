@@ -82,3 +82,49 @@ grid creation is the same, when iterating we now look for an A, and then we chec
 
 #### Time complexity
 still O(n). a bit less heavy than the silver solution even.
+
+
+## Day 4
+### Silver
+#### Algorithm:
+TODO
+
+
+
+
+#### Time complexity:
+TODO
+
+### Gold
+#### Algorithm:
+TODO
+#### Side Note:
+Yeah i thougt "im gonna brute force this one:
+
+```python
+def check_update(update):
+    past_list = []  # Keep track off all pages in this update
+    fail = False
+    for page in update:
+        rules = cummulative_rules[page] # Get all active rules for this page.
+        if bool(set(rules) & set(past_list)):   # If any
+            fail = True
+            break
+        past_list.append(page)
+    
+    return update[int(len(update) / 2)] if not fail else 0
+
+
+def brute_force(update):
+    for permutation in permutations(update):  # Brute force baby
+        val = check_update(permutation)
+        if val > 0:
+            return val
+    return 0
+```
+
+Yeah no, immediately after running my laptop fans started spinning. didnt get a single line done.
+O(n!) is  some crazy stuff.
+
+#### Time complexity
+TODO

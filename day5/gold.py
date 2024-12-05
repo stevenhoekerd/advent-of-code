@@ -1,3 +1,4 @@
+from itertools import permutations
 input = open("input.txt")
 lines = input.readlines()
 
@@ -38,10 +39,32 @@ def check_update(update):
     
     return update[int(len(update) / 2)] if not fail else 0
 
+
+def not_brute_force(update:list[int]):
+    new_update:list[int] = []
+    val = 0
+    for page in update:
+        if len(new_update) == 0:    # Base Case. no rules broken here
+            new_update.append(page)
+            continue
+        # try inserting at any spot
+        for i in range(0,len(new_update)+1):
+            new_new_update = new_update.copy()
+            new_new_update.insert(i,page)
+            val = check_update(new_new_update)
+            if val > 0:
+                new_update = new_new_update
+                break 
+    return val
+
 # Now with all rules in place, loop over all updates
 total_value = 0
+progress = 0
 for update in update_list:
-    total_value += check_update(update)
+    progress += 1
+    val = check_update(update)
+    if val == 0:
+        total_value += not_brute_force(update)
     
 
 
