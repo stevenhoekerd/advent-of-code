@@ -20,7 +20,7 @@ class Line:
         if self.check_single(op_list):
             return self.goal
         
-        iterator = itertools.product("+*", repeat=(len(self.values) - 1))
+        iterator = itertools.product("+*|", repeat=(len(self.values) - 1))
         for string in iterator:
             if self.check_single(string):
                 return True
@@ -31,8 +31,10 @@ class Line:
         for i in range(1,len(self.values)):
             if operators[i-1] == "+":
                 intermediate += self.values[i]
-            else:
+            elif operators[i-1] == "*":
                 intermediate *= self.values[i]
+            else:
+                intermediate = int(f"{intermediate}{self.values[i]}")
         return self.goal == intermediate
 
 
